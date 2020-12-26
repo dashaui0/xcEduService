@@ -24,10 +24,17 @@ public class CmsPageController implements CmsPageControllerApi {
     @Autowired
     private PageService pageService;
 
+    /**
+     * 页面查询方法
+     * @param page 当前页码
+     * @param size 页面显示个数
+     * @param queryPageRequest 查询条件
+     * @return 页面列表
+     */
     @Override
     @GetMapping("/list/{page}/{size}")
-    public QueryResponseResult findList(@PathVariable("page") int page, @PathVariable("size") int size, QueryPageRequest queryPageRequest) {
-
+    public QueryResponseResult findList(@PathVariable("page") int page,
+                                        @PathVariable("size") int size, QueryPageRequest queryPageRequest) {
         return pageService.findList(page, size, queryPageRequest);
     }
 
