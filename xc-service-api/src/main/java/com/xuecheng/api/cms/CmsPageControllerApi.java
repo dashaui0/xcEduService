@@ -28,10 +28,16 @@ public interface CmsPageControllerApi {
     public CmsPage findById(String id);
 
 
+    //修改页面
     @ApiOperation("修改页面")
     public CmsPageResult edit(String id,CmsPage cmsPage);
 
+    //删除页面
     @ApiOperation("根据Id删除页面")
     public ResponseResult delete(String id);
+
+    //页面发布
+    @ApiOperation("页面发布")
+    public ResponseResult post(String pageId);
 
 }

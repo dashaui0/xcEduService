@@ -2,13 +2,14 @@ package com.xuecheng.framework.domain.cms.response;
 
 import com.xuecheng.framework.model.response.ResultCode;
 import lombok.ToString;
+import org.apache.commons.io.filefilter.FalseFileFilter;
 
 /**
  * Created by mrt on 2018/3/5.
  */
 @ToString
 public enum CmsCode implements ResultCode {
-
+    CMS_PAGE_NOTEXISTS(false,24006,"页面不存在"),
     CMS_ADDPAGE_EXISTSNAME(false,24001,"页面名称已存在！"),
     CMS_GENERATEHTML_DATAURLISNULL(false,24002,"从页面信息中找不到获取数据的url！"),
     CMS_GENERATEHTML_DATAISNULL(false,24003,"根据页面的数据url获取不到数据！"),

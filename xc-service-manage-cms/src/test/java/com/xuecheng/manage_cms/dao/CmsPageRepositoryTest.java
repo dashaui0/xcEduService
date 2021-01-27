@@ -1,6 +1,7 @@
 package com.xuecheng.manage_cms.dao;
 
 import com.xuecheng.framework.domain.cms.CmsPage;
+import com.xuecheng.manage_cms.service.PageService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ public class CmsPageRepositoryTest {
 
     @Autowired
     private CmsPageRepository cmsPageRepository;
+    @Autowired
+    PageService pageService;
 
     //查询所有
     @Test
@@ -34,5 +37,12 @@ public class CmsPageRepositoryTest {
     @Test
     public void testFindPage(){
 
+    }
+
+    //查询所有
+    @Test
+    public void testGetPageHtml(){
+        String pageHtml = pageService.getPageHtml("297e7c7c62b888f00162b8a7dec20000");
+        System.out.println(pageHtml);
     }
 }
